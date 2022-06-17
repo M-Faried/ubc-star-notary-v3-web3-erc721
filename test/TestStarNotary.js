@@ -2,7 +2,7 @@ const StarNotary = artifacts.require("StarNotary");
 
 let accounts;
 let owner;
-let idCounter = counter();
+let idGenerator = counter();
 
 function counter() {
     let value = 0;
@@ -18,7 +18,7 @@ contract('StarNotary', (accs) => {
     owner = accounts[0];
 
     it('can Create a Star', async () => {
-        let tokenId = idCounter.increment();
+        let tokenId = idGenerator.increment();
         let instance = await StarNotary.deployed();
 
         await instance.createStar('Awesome Star!', 'STR', tokenId, { from: accounts[0] })
@@ -30,7 +30,7 @@ contract('StarNotary', (accs) => {
     it('lets user1 put up their star for sale', async () => {
         let instance = await StarNotary.deployed();
         let user1 = accounts[1];
-        let starId = idCounter.increment();
+        let starId = idGenerator.increment();
         let starPrice = web3.utils.toWei(".01", "ether");
 
         await instance.createStar('awesome star', 'STR', starId, { from: user1 });
@@ -42,7 +42,7 @@ contract('StarNotary', (accs) => {
         let instance = await StarNotary.deployed();
         let user1 = accounts[1];
         let user2 = accounts[2];
-        let starId = idCounter.increment();
+        let starId = idGenerator.increment();
         let starPrice = web3.utils.toWei(".01", "ether");
         let balance = web3.utils.toWei(".05", "ether");
 
@@ -62,7 +62,7 @@ contract('StarNotary', (accs) => {
         let instance = await StarNotary.deployed();
         let user1 = accounts[1];
         let user2 = accounts[2];
-        let starId = idCounter.increment();
+        let starId = idGenerator.increment();
         let starPrice = web3.utils.toWei(".01", "ether");
         let balance = web3.utils.toWei(".05", "ether");
 
@@ -77,7 +77,7 @@ contract('StarNotary', (accs) => {
         let instance = await StarNotary.deployed();
         let user1 = accounts[1];
         let user2 = accounts[2];
-        let starId = idCounter.increment();
+        let starId = idGenerator.increment();
         let starPrice = web3.utils.toWei(".01", "ether");
         let balance = web3.utils.toWei(".05", "ether");
 
@@ -97,7 +97,7 @@ contract('StarNotary', (accs) => {
     it('can add the star name and star symbol properly', async () => {
         // 1. create a Star with different tokenId
         // 2. Call the name and symbol properties in your Smart Contract and compare with the name and symbol provided
-        let tokenId = idCounter.increment();
+        let tokenId = idGenerator.increment();
         let instance = await StarNotary.deployed();
 
         await instance.createStar('Awesome Star!', 'STR', tokenId, { from: accounts[0] })
@@ -113,8 +113,8 @@ contract('StarNotary', (accs) => {
 
         let user1 = accounts[0];
         let user2 = accounts[1];
-        let idStar1 = idCounter.increment();
-        let idStar2 = idCounter.increment();
+        let idStar1 = idGenerator.increment();
+        let idStar2 = idGenerator.increment();
 
         let instance = await StarNotary.deployed();
         await instance.createStar('User 1 Exchange Star', 'STR', idStar1, { from: user1 });
@@ -135,7 +135,7 @@ contract('StarNotary', (accs) => {
 
         let user1 = accounts[0];
         let user2 = accounts[1];
-        let idStar = idCounter.increment();
+        let idStar = idGenerator.increment();
 
         let instance = await StarNotary.deployed();
         await instance.createStar('Twinkle Star', 'STR', idStar, { from: user1 });
@@ -150,7 +150,7 @@ contract('StarNotary', (accs) => {
         // 2. Call your method lookUptokenIdToStarInfo
         // 3. Verify if you Star name is the same
 
-        let tokenId = idCounter.increment();
+        let tokenId = idGenerator.increment();
 
         let instance = await StarNotary.deployed();
         await instance.createStar('Awesome Star!', 'STR', tokenId, { from: accounts[0] })
