@@ -136,3 +136,20 @@ compilers: {
 ---
 
 Do not use the [Old depreacted zipped starter code](https://s3.amazonaws.com/video.udacity-data.com/topher/2019/January/5c51c4c0_project-5-starter-code/project-5-starter-code.zip)
+
+
+# Submission Required Info
+## Specify the Truffle version and OpenZeppelin version used in the project.
+truffle@5.4.29
+openzeppelin-solidity@2.3
+truffle-hdwallet-provider@1.0.17
+
+## Your ERC-721 Token Name
+StarNotary
+
+## ERC721 Token Symbol
+STR
+
+## Your “Token Address” on the Rinkeby Network
+I have problems reaching Rinkeby Network so I used Ropsten test network.
+Contract Address: 0xdAC8ca10eA540d8304c9F0F84E335273Baf71ae7
