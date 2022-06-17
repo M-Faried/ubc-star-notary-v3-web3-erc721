@@ -141,7 +141,9 @@ Do not use the [Old depreacted zipped starter code](https://s3.amazonaws.com/vid
 # Submission Required Info
 ## Specify the Truffle version and OpenZeppelin version used in the project.
 truffle@5.4.29
+
 openzeppelin-solidity@2.3
+
 truffle-hdwallet-provider@1.0.17
 
 ## Your ERC-721 Token Name
