@@ -147,11 +147,11 @@ openzeppelin-solidity@2.3
 truffle-hdwallet-provider@1.0.17
 
 ## Your ERC-721 Token Name
-StarNotary
+StarNotaryERC721
 
 ## ERC721 Token Symbol
 STR
 
 ## Your “Token Address” on the Rinkeby Network
 I have problems reaching Rinkeby Network so I used Ropsten test network.
-Contract Address: 0xdAC8ca10eA540d8304c9F0F84E335273Baf71ae7
+Contract Address: 0xA4d5bACf40FEEAc84a6951860E063bEc34A766fE
